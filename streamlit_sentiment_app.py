@@ -28,8 +28,8 @@ def clean_text(text):
 # Load dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Tweets.csv")  # Ensure the CSV is uploaded
-    df = df[['text', 'airline_sentiment']]  # Use only necessary columns
+    df = pd.read_csv("Tweets.csv")  
+    df = df[['text', 'airline_sentiment']]  
     df.dropna(inplace=True)
     df['clean_text'] = df['text'].apply(clean_text)
     return df
